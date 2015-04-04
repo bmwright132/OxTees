@@ -18,10 +18,12 @@
         <script type="text/javascript">
             function check(form) { /*function to check userid & password*/
                 /*the following code checkes whether the entered userid and password are matching*/
-                if(form.userid.value == "myuserid" && form.pswrd.value == "mypswrd") {
+                if(form.userid.value == "myuserid" && form.pswrd.value == "mypswrd") 
+                {
                     window.open('loginMessage.php')/*opens the target page while Id & password matches*/
                 }
-                else {
+                else
+                {
                     alert("Error Password or Username")/*displays error message*/
                 }
             }
