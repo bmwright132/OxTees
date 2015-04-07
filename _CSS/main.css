@@ -40,11 +40,11 @@ h3 a{
  text-decoration: none;   
 }
 h3 a:link{
-    color: #fff;
+    color: #111;
 }
 
 h3 a:visited{
-    color: #fff;
+    color: #111;
 }
 
 h3 a:hover{
@@ -60,7 +60,7 @@ p#help{
     line-height: 2em;
     
 	}
-label.requiredLeft{ display: inline-block; width: 10em; height: 5em; }
+label.requiredLeft{ display: inline-block; width: 10em; height: 5em;}
 label.requiredRight{ display: inline-block; width: 10em; height: 5em; margin-left: 20em; position: relative; }
 input.leftLabel{ position: relative; }
 
@@ -97,3 +97,7 @@ input.leftLabel{ position: relative; }
        display: inline-block;
     margin-right: 10px;
   }
+label{
+ width: 10px;
+    position: absolute 0;
+}

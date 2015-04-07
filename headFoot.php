@@ -8,7 +8,7 @@ function headers($title)
 <head>
 <meta charset="ISO-8859-1">
 <title>$title</title>
-<link rel = "stylesheet" type= "text/css" href = "main.css">
+<link rel = "stylesheet" type= "text/css" href = "_CSS/main.css">
 		</head>
 _END;
 		echo <<<_END
@@ -32,7 +32,7 @@ else
 <head>
 <meta charset="ISO-8859-1">
 <title>$title</title>
-		<link rel = "stylesheet" type= "text/css" href = "main.css">
+		<link rel = "stylesheet" type= "text/css" href = "_CSS/main.css">
 </head>
 _END;
        
@@ -42,7 +42,7 @@ if ((isset($_SESSION['username']) && isset($_SESSION['password'])))
 } 
 else 
 { 
-    echo '<h3 class = "signIn"><a href = "login2.php">Sign In</a></h3>';  
+    echo '<h3 class = "signIn"><a href = "login.php">Sign In</a></h3>'; 
 }
 echo <<<_END
 		<nav class = "nav">
@@ -62,7 +62,7 @@ function footers()
 {
 	echo <<<_END
 	<head>
-	<link rel = "stylesheet" type= "text/css" href = "main.css">
+	<link rel = "stylesheet" type= "text/css" href = "_CSS/main.css">
 	</head>
     <p><a href = "admin.php">admin</a></p>
 	<p>We are located at 420 W Jefferson Street Milledgeville, GA 31061. Call us at 1 800 COOL TEE. You can also email us at either support@oxtees.com for support assistance or jared@oxtees.com for job opportunities</p>

@@ -1,4 +1,7 @@
-<?php require_once 'headFoot.php';?>
+<?php
+session_start(); 
+require_once 'headFoot.php';
+?>
 <html>
 <head>
 </head>

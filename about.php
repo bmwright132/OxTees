@@ -1,4 +1,7 @@
-<?php require_once 'headFoot.php'; ?>
+<?php 
+session_start();
+require_once 'headFoot.php'; 
+?>
 <html>
 <head>
 </head>
@@ -6,10 +9,11 @@
     <div id="header">
     <?php headers("OX's Tees - About Us")?>
     </div>
+    
     <div id="container">
     <div id="content">
 <h1 style="margin-left:auto;margin-right:auto;display:block;margin-top:0%;margin-bottom:0%">About Us</h1>
-<div style="width:100%;height:10%;vertical-align:middle;text-align:center;">
+<div style="width:100%;height:10%;vertical-align:middle;text-align:center; display:block;">
     <img src="_images/aboutus.jpg" />
     </div>
     
@@ -17,10 +21,11 @@
         OXtees.com takes this participation to a new level as a rich and exciting interactive destination. When you're transported into the world of OX's Tees online, you can shop for great products for yourself and your home, learn about adventure, style and culture, find one-of-a-kind vintage pieces and exquisite gifts and much, much more. Back when all this started, I felt sure that there were no boundaries. I'm even more sure of that today.</font></b></blockquote>    
     </div>
     </div>
-    </body>
     
+    </body>
     
     <div id="footer">
 <?php footers();?>
 	</div>
+	
 </html>

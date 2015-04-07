@@ -1,8 +1,9 @@
 <?php
 require_once 'headFoot.php';
+require_once 'dbConnect.php';
 session_start();
 
-setcookie("user", $_POST['username'], time() - 3600, "/");
+setcookie("user", $_POST['userid'], time() - 3600, "/");
 
 echo <<<_END
 <head>
@@ -21,35 +22,38 @@ _END;
 
 if(!isset($_SESSION['username']) && !isset($_SESSION['password']))
 {
-if(isset($_POST['username']) && !empty($_POST['username']) && !empty($_POST['password']))
-{
-	$user = $_POST['username'];
-	$pass = $_POST['password'];
-	$query = "SELECT password FROM Customer WHERE username = '$user'";
-	
+	$user = $_POST['userid'];
+	$pass = $_POST['pswrd'];
+	$query = "SELECT `password` FROM Login WHERE username = '$user'";
+		
 	$result = mysql_query($query);
-	if(!$result) die("Unable to access database!" . mysql_error());
-	
+	if(!$result) die("Unable to access databse: " .mysql_error());
 	$row = mysql_fetch_row($result);
-	
-	
-		if($row[0] == $pass)
-		{	
-			echo 'Logged in';
-			$_SESSION['username'] = $user;
-			$_SESSION['password'] = $pass;
-		}
-		else 
-		{
-			echo 'Wrong username or password';
-		}
+		
+		
+	if($row[0] == $pass)
+	{	
+		echo 'Logged in!<br> You may continue shopping.';
+		$_SESSION['username'] = $user;
+		$_SESSION['password'] = $pass;
+	}
+	else 
+	{
+		echo 'Wrong username or password<br>';
+echo <<<_END
+<form name="login" action="loginMessage.php" onsubmit = "return allValid()" method="post">
+            <label>Username</label><input type="text" name="userid" id="userid"/><label id="userErr"></label>
+            <br>
+            Password<input type="password" name="pswrd"  id="pswrd"/><label id="pswrdErr"></label>
+            <br>
+            <input type="submit" value="Login"/>
+            <input type="reset" value="Cancel"/>
+        </form>
+_END;
+	}
 }
-else
+else 
 {
-	echo "Please enter a username";
-}
-}
-else {
 	echo "Already logged in";
 }
 
