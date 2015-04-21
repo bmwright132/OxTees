@@ -3,7 +3,6 @@ require_once 'headFoot.php';
 require_once 'dbConnect.php';
 session_start();
 
-setcookie("user", $_POST['userid'], time() - 3600, "/");
 
 echo <<<_END
 <head>
@@ -34,6 +33,7 @@ if(!isset($_SESSION['username']) && !isset($_SESSION['password']))
 	if($row[0] == $pass)
 	{	
 		echo 'Logged in!<br> You may continue shopping.';
+		setcookie("user", $_POST['username'], time() - 3600, "/");
 		$_SESSION['username'] = $user;
 		$_SESSION['password'] = $pass;
 	}

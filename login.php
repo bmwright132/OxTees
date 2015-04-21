@@ -5,7 +5,7 @@ require_once 'dbConnect.php';
 ?>
 <html>
     <head>
-    <script type="text/javascript" src="_scripts/validate.js" async></script>
+    <script type="text/javascript" src="test.js" async></script>
     </head>
     <body>
     <?php headers("OX's Tees - Login");?>
@@ -14,12 +14,12 @@ require_once 'dbConnect.php';
     <h1 style="margin-left:auto;margin-right:auto;display:block;margin-top:0%;margin-bottom:0%">Login and continue to shop!</h1>
  
    
-        <form name="login" action="loginMessage.php" onsubmit = "return allValid()" method="post">
+        <form name="login" id="login" action="loginMessage.php" onsubmit = "return allValid()" method="post">
             <label>Username</label><input type="text" name="userid" id="userid"/><label id="userErr"></label>
             <br>
             Password<input type="password" name="pswrd"  id="pswrd"/><label id="pswrdErr"></label>
             <br>
-            <input type="submit" value="Login"/>
+            <input type="submit" id = "submit" value="Login"/>
             <input type="reset" value="Cancel"/>
             <br>
             Don't have an account with us? <a href="accountCreation.php">Create an account</a>
