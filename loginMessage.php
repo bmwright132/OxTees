@@ -1,19 +1,12 @@
 <?php
-require_once 'headFoot.php';
 require_once 'dbConnect.php';
 session_start();
 
-setcookie("user", $_POST['userid'], time() - 3600, "/");
 
 echo <<<_END
 <head>
-<link rel = "stylesheet" type= "text/css" href = "main.css">
 </head>
 _END;
-
-echo '<div id = "header">';
-headers("OX's Tees - Logged in");
-echo '</div>';
 
 echo <<<_END
 <div id = "container">
@@ -22,8 +15,8 @@ _END;
 
 if(!isset($_SESSION['username']) && !isset($_SESSION['password']))
 {
-	$user = $_POST['userid'];
-	$pass = $_POST['pswrd'];
+	$user = $_POST['username'];
+	$pass = $_POST['password'];
 	$query = "SELECT `password` FROM Login WHERE username = '$user'";
 		
 	$result = mysql_query($query);
@@ -34,6 +27,7 @@ if(!isset($_SESSION['username']) && !isset($_SESSION['password']))
 	if($row[0] == $pass)
 	{	
 		echo 'Logged in!<br> You may continue shopping.';
+		setcookie("user", $_POST['username'], time() - 3600, "/");
 		$_SESSION['username'] = $user;
 		$_SESSION['password'] = $pass;
 	}
@@ -58,8 +52,5 @@ else
 }
 
 echo '</div>';
-echo '</div>';
-echo '<div id= "footer">';
-footers();
 echo '</div>';
 ?>

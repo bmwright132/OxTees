@@ -10,7 +10,7 @@ user.onblur = function validate()
 {
     if(user.value == "")
     {
-        document.getElementById('userErr').innerHTML = "*Username cannot be empty";
+        document.getElementById('userErr').innerHTML = "* Username cannot be empty";
 		userValid = false;
     }
     else if(/^[a-zA-Z][a-zA-Z0-9]*$/.test(user.value))
@@ -20,7 +20,7 @@ user.onblur = function validate()
     }
     else
     {
-		document.getElementById('userErr').innerHTML = "*Please enter a valid username";
+		document.getElementById('userErr').innerHTML = "* Please enter a valid username";
 		userValid = false;
     }
 }
@@ -29,12 +29,12 @@ pwd.onblur = function validate()
 {
     if(pwd.value == "")
     {
-        document.getElementById('pswrdErr').innerHTML = "*Password cannot be empty";
+        document.getElementById('pswrdErr').innerHTML = "* Password cannot be empty";
 		userValid = false;
     }
-    else if(pwd.value.length < 5)
+    else if(pwd.value.length < 6)
     {
-        document.getElementById('pswrdErr').innerHTML = "*Password must be atleast 5 characters";
+        document.getElementById('pswrdErr').innerHTML = "* Password must be atleast 6 characters";
 		userValid = false;
     }
     else
@@ -56,4 +56,3 @@ function allValid()
 		return false;
 	}
 }
-
